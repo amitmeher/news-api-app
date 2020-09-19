@@ -1,26 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Application from './Component/SilverMine';
+import { Provider as StoreProvider } from 'react-redux';
+import store from './Store';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () =>
+  <StoreProvider store={store}>
+    <Application />
+  </StoreProvider>
 
 export default App;
